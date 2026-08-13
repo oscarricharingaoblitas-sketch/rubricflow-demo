@@ -1,6 +1,3 @@
-Exit code: 0
-Wall time: 0.6 seconds
-Output:
 """Auditable, evidence-first sample grader for ATIPAQ 2026 criteria."""
 
 from __future__ import annotations
@@ -77,7 +74,7 @@ def grade(text: str, rubric: list[dict[str, object]]) -> dict[str, object]:
         key = str(item["key"])
         result[f"{key}_evidence_score"] = evidence_score
         result[f"{key}_points"] = points
-        result[f"{key}_evidence"] = " | ".join(evidence) or "Sin evidencia explÃ­cita"
+        result[f"{key}_evidence"] = " | ".join(evidence) or "Sin evidencia explícita"
 
     total = round(total, 2)
     innovation_scalability = round(
