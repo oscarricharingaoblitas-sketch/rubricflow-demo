@@ -1,0 +1,25 @@
+section,key,label,min_score,max_score
+project,p1,Originalidad y creatividad,1,4
+project,p2,Impacto en la calidad de vida,1,4
+project,p3,Contribucion a la economia local,1,4
+project,p4,Sostenibilidad y uso eficiente de recursos,1,4
+project,p5,Uso de IA generativa para publicidad digital,1,4
+project,p6,Aplicacion del ciclo de vida del cliente,1,4
+project,p7,Validacion y mejora del proyecto,1,4
+portfolio,f1,Presentacion y estructura del portafolio,1,4
+portfolio,f2,Introduccion del proyecto,1,4
+portfolio,f3,Analisis tecnico del producto o servicio,1,4
+portfolio,f4,Evidencia de aplicacion del Design Thinking,1,4
+portfolio,f5,Validacion del PMV con Lean Canvas,1,4
+portfolio,f6,Planificacion y gestion del proceso,1,4
+portfolio,f7,Validacion con clientes,1,4
+portfolio,f8,Uso de IA generativa en publicidad digital,1,4
+portfolio,f9,Impacto social economico y ambiental del proyecto,1,4
+portfolio,f10,Reflexion y aprendizajes del equipo,1,4
+portfolio,f11,Evidencia visual y autenticidad del proyecto,1,4
+portfolio,f12,Documentacion adicional y respaldo del proyecto,1,4
+expo,e1,Organizacion del equipo emprendedor,1,4
+expo,e2,Identificacion del problema,1,4
+expo,e3,Propuesta de solucion al problema,1,4
+expo,e4,Perfil del cliente,1,4
+expo,e5,Innovacion del producto o servicio,1,4
