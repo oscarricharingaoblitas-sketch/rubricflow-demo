@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RubricFlow - Muestra ATIPAQ 2026</title>
+  <meta name="description" content="Muestra técnica no oficial con los criterios publicados de ATIPAQ 2026 y postulaciones totalmente ficticias.">
+  <style>
+    :root{--ink:#102a43;--muted:#627d98;--paper:#f8fafc;--purple:#6d28d9;--lilac:#f1ebff;--line:#d9e2ec;--green:#0f766e}
+    *{box-sizing:border-box}body{margin:0;background:linear-gradient(150deg,#faf8ff,#f8fafc 55%);color:var(--ink);font:16px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}
+    main{width:min(1000px,calc(100% - 32px));margin:auto;padding:42px 0 70px}.back{color:var(--purple);font-weight:750;text-decoration:none}
+    h1{font-size:clamp(2.5rem,7vw,5rem);line-height:.96;letter-spacing:-.055em;margin:38px 0 18px;max-width:880px}.lede{font-size:1.12rem;color:var(--muted);max-width:760px}
+    .criteria,.results,.controls{display:grid;gap:14px}.criteria{grid-template-columns:repeat(4,1fr);margin:34px 0}.card{border:1px solid #cdbbfa;background:var(--lilac);border-radius:18px;padding:20px}
+    .card strong{display:block;color:var(--purple);font-size:2rem}.card span{font-weight:750}.results{grid-template-columns:repeat(3,1fr)}.result{background:white;border:1px solid var(--line);border-radius:18px;padding:20px}
+    .result strong{font-size:2rem;display:block}.good{color:var(--green)}.mid{color:#b45309}.low{color:#b42318}.result p{color:var(--muted)}
+    .controls{grid-template-columns:repeat(3,1fr);margin:26px 0}.control{border-top:2px solid var(--purple);padding-top:12px}.control strong{display:block}
+    .downloads{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}.downloads a{padding:11px 15px;border-radius:999px;background:var(--ink);color:white;text-decoration:none;font-weight:750}
+    .offer{margin-top:38px;background:var(--purple);color:white;border-radius:22px;padding:26px;display:flex;justify-content:space-between;gap:20px;align-items:center}.offer strong{font-size:2rem}.offer a{background:white;color:var(--purple);padding:11px 16px;border-radius:999px;text-decoration:none;font-weight:800}
+    .notice{margin-top:28px;color:var(--muted);font-size:.85rem}@media(max-width:720px){.criteria,.results,.controls{grid-template-columns:1fr 1fr}.offer{align-items:flex-start;flex-direction:column}}@media(max-width:480px){.criteria,.results,.controls{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+<main>
+  <a class="back" href="../">← Volver a la demo principal</a>
+  <h1>Muestra no oficial para ATIPAQ 2026</h1>
+  <p class="lede">Tres postulaciones totalmente ficticias evaluadas con una adaptación transparente de los cuatro criterios y límites publicados por Misión 3. No se utilizaron datos de participantes reales.</p>
+  <section class="criteria" aria-label="Criterios publicados">
+    <div class="card"><strong>30</strong><span>Mérito innovador</span></div>
+    <div class="card"><strong>15</strong><span>Modelo de negocio</span></div>
+    <div class="card"><strong>15</strong><span>Escalabilidad</span></div>
+    <div class="card"><strong>40</strong><span>Equipo emprendedor</span></div>
+  </section>
+  <h2>Resultados reproducibles</h2>
+  <section class="results">
+    <div class="result"><strong class="good">92.5</strong><b>SYN-A01</b><p>Supera los límites matemáticos de referencia; todavía requiere verificación y criterio del jurado.</p></div>
+    <div class="result"><strong class="mid">21.5</strong><b>SYN-A02</b><p>Evidencia parcial; faltan mercado, ejecución y composición del equipo.</p></div>
+    <div class="result"><strong class="low">0.0</strong><b>SYN-A03</b><p>Las afirmaciones negadas no se cuentan como evidencia positiva.</p></div>
+  </section>
+  <section class="controls">
+    <div class="control"><strong>Pesos exactos</strong><span>30 + 15 + 15 + 40 = 100.</span></div>
+    <div class="control"><strong>Límites visibles</strong><span>70 total y 25 combinados en mérito + escalabilidad.</span></div>
+    <div class="control"><strong>Revisión humana</strong><span>Los tres jurados conservan la calificación y decisión final.</span></div>
+  </section>
+  <div class="downloads">
+    <a href="results.csv">Descargar resultados ficticios</a>
+    <a href="atipaq_2026_rubric.csv">Descargar rúbrica</a>
+    <a href="synthetic_applications.csv">Descargar casos ficticios</a>
+    <a href="grader.py">Ver código</a>
+    <a href="test_grader.py">Ver pruebas</a>
+  </div>
+  <section class="offer">
+    <div><strong>Piloto: USD 95</strong><div>Una rúbrica, hasta 50 postulaciones desidentificadas, CSV auditable y una calibración.</div></div>
+    <a href="https://github.com/oscarricharingaoblitas-sketch/rubricflow-demo/issues/new?template=pilot-request.yml">Solicitar piloto</a>
+  </section>
+  <p class="notice">Fuente: Bases oficiales ATIPAQ 2026, páginas 4-5. Esta demostración independiente no está afiliada ni aprobada por Misión 3 o la Universidad César Vallejo. El cálculo automatizado no sustituye la evaluación de los jurados.</p>
+</main>
+</body>
+</html>
