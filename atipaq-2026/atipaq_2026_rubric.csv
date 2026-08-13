@@ -1,9 +1,5 @@
-Exit code: 0
-Wall time: 0.6 seconds
-Output:
 key,label,max_points,signals
-merito_innovador,MÃ©rito innovador,30,diferenciaciÃ³n|ventaja competitiva|innovaciÃ³n|tecnologÃ­a|barrera de entrada|patente|propietaria
-modelo_negocio,Modelo de negocio,15,ventas|piloto|usuarios activos|acuerdo comercial|carta de intenciÃ³n|impacto positivo|impacto negativo|cadena de valor
-escalabilidad,Escalabilidad,15,mercado creciente|tamaÃ±o de mercado|segmento|expansiÃ³n|capital semilla|plan de ejecuciÃ³n|presupuesto|hito
-equipo_emprendedor,Equipo emprendedor,40,perfiles complementarios|equipo|fundador|experiencia|capacidad de ejecuciÃ³n|mayor de 50|intergeneracional|liderazgo
-
+merito_innovador,Mérito innovador,30,diferenciación|ventaja competitiva|innovación|tecnología|barrera de entrada|patente|propietaria
+modelo_negocio,Modelo de negocio,15,ventas|piloto|usuarios activos|acuerdo comercial|carta de intención|impacto positivo|impacto negativo|cadena de valor
+escalabilidad,Escalabilidad,15,mercado creciente|tamaño de mercado|segmento|expansión|capital semilla|plan de ejecución|presupuesto|hito
+equipo_emprendedor,Equipo emprendedor,40,perfiles complementarios|equipo|fundador|experiencia|capacidad de ejecución|mayor de 50|intergeneracional|liderazgo
