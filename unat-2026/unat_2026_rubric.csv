@@ -1,0 +1,7 @@
+key,label,max_points,signals
+pertinencia,Pertinencia y alineacion tematica,20,linea de investigacion|UNAT|Huancavelica|problematica regional
+calidad,Calidad cientifica y metodologica,25,problema|objetivo|hipotesis|metodologia|viabilidad tecnica
+plan,Coherencia del plan de actividades y presupuesto,20,cronograma|presupuesto|actividad|gasto elegible|costo
+asesor,Idoneidad del asesor y/o coasesor,15,CTI Vitae|ORCID|perfil afin|experiencia tematica
+impacto,Potencial de impacto y aplicabilidad,15,desarrollo cientifico|desarrollo tecnologico|desarrollo socioeconomico|aplicabilidad|resultado esperado
+integridad,Integridad del expediente y calidad de la presentacion,5,documentacion completa|documentacion coherente|requisitos formales|foliado|sin enmendaduras
