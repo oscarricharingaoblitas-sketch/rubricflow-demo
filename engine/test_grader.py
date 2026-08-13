@@ -3,7 +3,7 @@ import unittest
 import csv
 from pathlib import Path
 
-from grader import grade, grade_csv
+from grader import grade, grade_csv, load_rubric
 
 
 STRONG = (
@@ -24,6 +24,25 @@ class GraderTests(unittest.TestCase):
         self.assertEqual(5, len(result["criteria"]))
         self.assertTrue(all("evidence" in item for item in result["criteria"].values()))
 
+    def test_numbers_do_not_score_unmatched_criteria(self):
+        result = grade("There are 500 participants.")
+        self.assertEqual(0, result["overall_score"])
+        self.assertTrue(all(item["score"] == 0 for item in result["criteria"].values()))
+
+    def test_negated_signal_is_not_positive_evidence(self):
+        with tempfile.TemporaryDirectory() as directory:
+            rubric_path = Path(directory) / "rubric.csv"
+            rubric_path.write_text(
+                "key,label,weight,signals\n"
+                'budget,Presupuesto,100%,"presupuesto|partidas"\n',
+                encoding="utf-8",
+            )
+            rubric = load_rubric(rubric_path)
+            missing = grade("No se detalla el presupuesto ni las partidas.", rubric)
+            present = grade("El presupuesto detalla partidas por actividad.", rubric)
+            self.assertEqual(0, missing["criteria"]["budget"]["score"])
+            self.assertGreater(present["criteria"]["budget"]["score"], 0)
+
     def test_csv_round_trip(self):
         with tempfile.TemporaryDirectory() as directory:
             source = Path(directory) / "input.csv"
@@ -37,6 +56,33 @@ class GraderTests(unittest.TestCase):
             self.assertIn("development_stage_evidence", rows[0])
             self.assertIn("pilot", rows[0]["development_stage_evidence"].lower())
             self.assertIn("human_review", rows[0])
+
+    def test_custom_rubric_is_loaded_and_used(self):
+        with tempfile.TemporaryDirectory() as directory:
+            rubric_path = Path(directory) / "rubric.csv"
+            rubric_path.write_text(
+                "key,label,weight,signals\n"
+                'method,Rigor metodológico,70%,"muestra|instrumento|análisis"\n'
+                'impact,Impacto,30%,"beneficiarios|indicador"\n',
+                encoding="utf-8",
+            )
+            rubric = load_rubric(rubric_path)
+            result = grade(
+                "La muestra incluye 180 participantes, un instrumento validado y un plan de análisis.",
+                rubric,
+            )
+            self.assertEqual({"method", "impact"}, set(result["criteria"]))
+            self.assertGreater(result["criteria"]["method"]["score"], result["criteria"]["impact"]["score"])
+
+    def test_invalid_rubric_is_rejected(self):
+        with tempfile.TemporaryDirectory() as directory:
+            rubric_path = Path(directory) / "rubric.csv"
+            rubric_path.write_text(
+                "key,label,weight,signals\ninvalid-key,Method,1,pilot\n",
+                encoding="utf-8",
+            )
+            with self.assertRaisesRegex(ValueError, "invalid key"):
+                load_rubric(rubric_path)
 
 
 if __name__ == "__main__":
