@@ -1,0 +1,6 @@
+criterion,weight,signals,review_question
+Especificidad del problema,20%,"porque|afecta|actualmente|costo|demora|falta|problema","¿El problema está definido con alcance y evidencia?"
+Singularidad de la solución,20%,"diferente|única|novedosa|alternativa|propietaria|diferenciador|solución","¿La propuesta explica por qué es distinta?"
+Etapa de desarrollo,20%,"prototipo|piloto|lanzado|usuarios|ingresos|probado|mvp","¿Existe evidencia de ejecución o validación?"
+Beneficiarios y financiación,20%,"beneficiarios|clientes|comunidad|financiación|fondo|inversor|objetivo","¿Identifica usuarios y recursos necesarios?"
+Valor alianzas y presentación,20%,"alianza|reconocido|premio|impacto|escalable|mercado|hito","¿Presenta impacto y próximos hitos verificables?"
