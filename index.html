@@ -127,17 +127,32 @@
   ];
   const sample = "El problema afecta actualmente a 12,000 estudiantes rurales porque las demoras limitan su acceso. Nuestra solución única utiliza un flujo sin conexión, diferente de las herramientas existentes. Lanzamos un MVP y probamos un piloto con 240 usuarios. Los beneficiarios objetivo son escuelas rurales; conseguimos financiación y conversamos con dos inversores. Una alianza universitaria reconoció el impacto y el siguiente hito es un despliegue escalable.";
   const esc = value => value.replace(/[&<>\"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;',"'":'&#39;'}[ch]));
+  const normalizeText = value => value.toLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu, '');
+  const escapeRegex = value => value.replace(/[.*+?^${}()|[\]\\]/g, '\\  function evaluate() {
+    const text = document.querySelector('#application').value.trim().toLowerCase();');
+  function hasAffirmedSignal(text, signal) {
+    const term = normalizeText(signal);
+    const matcher = new RegExp(`(^|[^\\p{L}\\p{N}])${escapeRegex(term)}(?=$|[^\\p{L}\\p{N}])`, 'gu');
+    let match;
+    while ((match = matcher.exec(text))) {
+      const start = match.index + match[1].length;
+      const prefix = text.slice(Math.max(0, start - 60), start);
+      const negated = /(?:\b(?:no|sin|nunca|tampoco)\b(?:\s+\p{L}+){0,3}|\bcarec(?:e|emos|en|ia)\s+de(?:\s+\p{L}+){0,3})\s*$/u.test(prefix);
+      if (!negated) return true;
+    }
+    return false;
+  }
   function evaluate() {
-    const text = document.querySelector('#application').value.trim().toLowerCase();
+    const rawText = document.querySelector('#application').value.trim();
+    const text = normalizeText(rawText);
     let sum = 0;
     const html = rubric.map(([label, signals]) => {
-      const found = signals.filter(s => text.includes(s));
-      const numberBonus = /\b\d+(?:[.,]\d+)?%?\b/.test(text) ? 1 : 0;
-      const score = Math.min(10, Math.round(found.length / signals.length * 10) + numberBonus);
+      const found = signals.filter(signal => hasAffirmedSignal(text, signal));
+      const score = Math.min(10, Math.round(found.length / signals.length * 10));
       sum += score;
       return `<div class="criterion"><div class="row"><span>${label}</span><span>${score}/10</span></div><div class="bar"><i style="width:${score*10}%"></i></div><div class="evidence">${found.length ? 'Señales: '+found.map(esc).join(', ') : 'No se encontró evidencia explícita.'}</div></div>`;
     }).join('');
-    const total = text ? (sum/rubric.length).toFixed(1) : '0.0';
+    const total = rawText ? (sum/rubric.length).toFixed(1) : '0.0';
     document.querySelector('#criteria').innerHTML = html;
     document.querySelector('#overall').textContent = total;
     document.querySelector('#grade').textContent = total >= 7 ? 'Evidencia sólida' : total >= 4 ? 'Prometedora; requiere revisión' : 'Necesita evidencia adicional';
