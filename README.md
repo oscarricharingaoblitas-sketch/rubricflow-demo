@@ -24,6 +24,12 @@ The demo runs entirely in the browser. Text entered into the interface is not se
 
 RubricFlow is designed as a proof of concept for accelerators, grant programs, recruiting teams, and admissions workflows that need fast and auditable first-pass reviews.
 
+## Request a pilot
+
+A fixed-scope pilot starts at **US$95** and includes rubric configuration, a test batch, and one calibration round.
+
+[Request a RubricFlow pilot](https://github.com/oscarricharingaoblitas-sketch/rubricflow-demo/issues/new?template=pilot-request.yml)
+
 ## License
 
 MIT
