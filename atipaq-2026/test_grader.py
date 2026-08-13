@@ -1,6 +1,3 @@
-Exit code: 0
-Wall time: 0.6 seconds
-Output:
 import unittest
 from pathlib import Path
 
@@ -23,13 +20,13 @@ class AtipaqSampleTests(unittest.TestCase):
         self.assertFalse(supports_signal(sentence, "perfiles complementarios"))
 
     def test_positive_evidence_is_accepted_without_accents(self):
-        self.assertTrue(supports_signal("Existe innovacion y tecnologia propietaria.", "innovaciÃ³n"))
-        self.assertTrue(supports_signal("Existe innovacion y tecnologia propietaria.", "tecnologÃ­a"))
+        self.assertTrue(supports_signal("Existe innovacion y tecnologia propietaria.", "innovación"))
+        self.assertTrue(supports_signal("Existe innovacion y tecnologia propietaria.", "tecnología"))
 
     def test_weak_case_does_not_meet_thresholds(self):
         result = grade(
             "No tenemos usuarios activos ni ventas. Carecemos de una ventaja competitiva. "
-            "No existe tecnologÃ­a propietaria. Tampoco contamos con un plan de ejecuciÃ³n, "
+            "No existe tecnología propietaria. Tampoco contamos con un plan de ejecución, "
             "presupuesto, experiencia o perfiles complementarios.",
             self.rubric,
         )
