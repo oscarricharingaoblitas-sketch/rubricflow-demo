@@ -15,6 +15,7 @@ RubricFlow is a privacy-first proof of concept for transparent first-pass applic
 - [Unofficial ATIPAQ 2026 sample](atipaq-2026/) with published weights, threshold checks, synthetic applications, results, and tests
 - [Unofficial UNAT 2026 sample](unat-2026/) with the six published weights, rating bands, synthetic proposals, results, and tests
 - [Unofficial Belcorp Demo Day 2026 sample](belcorp-demo-day-2026/) with five published criteria, attendance/form checks, synthetic finalists, results, and tests
+- [Unofficial Crea y Emprende 2026 sample](crea-y-emprende-2026/) with the official category B limits (28/48/20), three-juror validation, fictional scores, results, and tests
 
 ## Run the batch engine
 
