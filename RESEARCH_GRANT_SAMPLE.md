@@ -17,9 +17,11 @@ Ejemplo demostrativo para una convocatoria de subvenciones o tesis. El sistema o
 
 | Código | Puntaje | Estado | Evidencia detectada | Bandera para revisión humana |
 |---|---:|---|---|---|
-| INV-001 | 86/100 | Priorizable | Diseño cuasiexperimental; muestra de 180 participantes; cronograma de 8 meses; presupuesto por actividad | Confirmar autorización ética y cálculo de muestra |
-| INV-002 | 61/100 | Requiere aclaración | Problema e impacto descritos; método general | No especifica instrumentos ni desglose presupuestal |
-| INV-003 | 38/100 | Evidencia insuficiente | Objetivo general y población objetivo | Faltan método, cronograma, riesgos y presupuesto |
+| INV-001 | 90/100 | Evidencia sólida | Diseño cuasiexperimental; muestra de 180 participantes; cronograma de 8 meses; presupuesto por actividad | Verificar las afirmaciones y tomar la decisión final |
+| INV-002 | 25.5/100 | Evidencia insuficiente | Problema, muestra e instrumento mencionados | Faltan análisis, viabilidad, presupuesto y capacidad del equipo |
+| INV-003 | 0/100 | Evidencia insuficiente | No se detectó evidencia explícita para la rúbrica | Solicitar información antes de evaluar |
+
+Estos resultados se generaron con el motor publicado, la rúbrica y tres postulaciones sintéticas. Pueden descargarse y reproducirse desde los enlaces de la demo.
 
 ## Salida auditable
 
