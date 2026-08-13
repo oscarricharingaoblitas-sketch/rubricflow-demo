@@ -1,0 +1,53 @@
+name: Solicitar piloto de RubricFlow
+description: Cuéntanos el flujo de evaluación que quieres probar.
+title: "[Piloto] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Gracias por tu interés. Este formulario es público: no incluyas datos personales, postulaciones reales ni información confidencial.
+  - type: input
+    id: organization
+    attributes:
+      label: Organización o proyecto
+      description: Nombre público de la organización, programa o proyecto.
+      placeholder: Programa de aceleración Ejemplo
+    validations:
+      required: true
+  - type: dropdown
+    id: workflow
+    attributes:
+      label: Flujo que quieres evaluar
+      options:
+        - Convocatorias y fondos
+        - Aceleración o incubación
+        - Admisiones
+        - Selección de proveedores
+        - Otro flujo de bajo riesgo
+    validations:
+      required: true
+  - type: input
+    id: volume
+    attributes:
+      label: Volumen aproximado
+      description: Cantidad estimada de registros por lote, sin adjuntar datos reales.
+      placeholder: 100 postulaciones por convocatoria
+    validations:
+      required: true
+  - type: textarea
+    id: rubric
+    attributes:
+      label: Criterios de la rúbrica
+      description: Enumera los criterios generales que deberían configurarse.
+      placeholder: Impacto, evidencia, viabilidad, claridad...
+    validations:
+      required: true
+  - type: checkboxes
+    id: scope
+    attributes:
+      label: Alcance inicial
+      options:
+        - label: Entiendo que el piloto de alcance fijo comienza en US$95 y que cualquier trabajo se acordará antes de iniciar.
+          required: true
+        - label: Confirmo que no incluiré datos personales, confidenciales ni decisiones automatizadas de alto impacto en este formulario público.
+          required: true
