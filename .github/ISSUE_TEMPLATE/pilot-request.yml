@@ -1,11 +1,13 @@
 name: Solicitar piloto de RubricFlow
-description: Cuéntanos el flujo de evaluación que quieres probar.
+description: Describe un flujo de evaluación para un piloto de alcance fijo.
 title: "[Piloto] "
 body:
   - type: markdown
     attributes:
       value: |
-        Gracias por tu interés. Este formulario es público: no incluyas datos personales, postulaciones reales ni información confidencial.
+        El piloto de **US$95** incluye una rúbrica de hasta cinco criterios, un lote de hasta 50 postulaciones, CSV auditable y una calibración.
+        
+        Revisa el [alcance completo](../../blob/main/PILOT_SCOPE.md). Este formulario es público: no incluyas datos personales, postulaciones reales ni información confidencial.
   - type: input
     id: organization
     attributes:
@@ -21,33 +23,55 @@ body:
       options:
         - Convocatorias y fondos
         - Aceleración o incubación
-        - Admisiones
+        - Admisiones de bajo riesgo
         - Selección de proveedores
         - Otro flujo de bajo riesgo
     validations:
       required: true
-  - type: input
+  - type: dropdown
     id: volume
     attributes:
-      label: Volumen aproximado
-      description: Cantidad estimada de registros por lote, sin adjuntar datos reales.
-      placeholder: 100 postulaciones por convocatoria
+      label: Volumen del lote inicial
+      options:
+        - 1 a 10 postulaciones
+        - 11 a 25 postulaciones
+        - 26 a 50 postulaciones
+        - Más de 50 (requiere otro alcance)
+    validations:
+      required: true
+  - type: dropdown
+    id: format
+    attributes:
+      label: Formato disponible
+      options:
+        - CSV
+        - Excel exportable a CSV
+        - Formulario exportable a CSV
+        - Aún no definido
     validations:
       required: true
   - type: textarea
     id: rubric
     attributes:
       label: Criterios de la rúbrica
-      description: Enumera los criterios generales que deberían configurarse.
-      placeholder: Impacto, evidencia, viabilidad, claridad...
+      description: Enumera hasta cinco criterios generales y sus ponderaciones, sin copiar información confidencial.
+      placeholder: Impacto 30%, evidencia 25%, viabilidad 20%...
+    validations:
+      required: true
+  - type: input
+    id: deadline
+    attributes:
+      label: Fecha objetivo
+      description: Indica cuándo necesitarías el resultado. El plazo estándar es de tres días hábiles después de recibir los insumos y confirmar el alcance.
+      placeholder: 30 de septiembre de 2026
     validations:
       required: true
   - type: checkboxes
     id: scope
     attributes:
-      label: Alcance inicial
+      label: Confirmaciones
       options:
-        - label: Entiendo que el piloto de alcance fijo comienza en US$95 y que cualquier trabajo se acordará antes de iniciar.
+        - label: Entiendo el alcance fijo de US$95 y que el trabajo solo comenzará después de acordar por escrito insumos, plazo y forma de pago.
           required: true
         - label: Confirmo que no incluiré datos personales, confidenciales ni decisiones automatizadas de alto impacto en este formulario público.
           required: true
