@@ -7,6 +7,8 @@ This integration converts reviewer requests in a RubricFlow CSV into the JSONL f
 - The builder only creates a task file; it never places or schedules calls.
 - Rows without a `human_review` request are skipped.
 - Phone numbers must use E.164 format.
+- Identifiers and review requests have length limits, and control characters are rejected.
+- Missing-information text is treated as quoted data rather than executable instructions.
 - The call goal forbids collecting passwords, banking details, government identifiers, or other sensitive data.
 - The recipient may decline and end the call.
 - A human operator must inspect the JSONL and explicitly choose CALL-E's execute mode before any real call.
@@ -59,4 +61,4 @@ CALL-E then performs `plan_call → run_call → get_call_run` and stores the pl
 python -m unittest -v
 ```
 
-The tests cover safe payload generation, E.164 validation, empty-review filtering, JSONL output, and required-column validation. No network access, CALL-E account, or paid API is needed.
+The tests cover safe payload generation, E.164 validation, input bounds, control-character rejection, empty-review filtering, JSONL output, and required-column validation. No network access, CALL-E account, or paid API is needed.
