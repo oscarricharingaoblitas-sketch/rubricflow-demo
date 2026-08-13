@@ -2,31 +2,39 @@
 
 [Open the live demo](https://oscarricharingaoblitas-sketch.github.io/rubricflow-demo/)
 
-RubricFlow is an interactive, privacy-first demo for evaluating applications with configurable rubrics and transparent scoring.
+RubricFlow is a privacy-first proof of concept for transparent first-pass application review. It highlights text evidence for five configurable business-evaluation criteria while keeping the final decision with a human reviewer.
 
-## What it demonstrates
+## What is available
 
-- Weighted scoring across experience, skills, evidence, and fit
-- Explainable score breakdowns instead of opaque rankings
-- Adjustable rubric weights
-- Instant browser-only evaluation
-- No API, account, backend, or external dependencies
+- Interactive browser demo; entered text stays in the browser
+- Five-criterion explainable score breakdown
+- [Sample rubric](sample-rubric.csv)
+- [Sample auditable results](sample-results.csv)
+- [Dependency-free Python batch engine](engine/grader.py) with [unit tests](engine/test_grader.py)
 
-## Run locally
+## Run the batch engine
 
-Download this repository and open `index.html` in any modern browser.
+```powershell
+cd engine
+python grader.py sample_applications.csv -o results.csv
+python -m unittest -v
+```
 
-## Privacy
+Input requires an `application` column; `id` is optional. Output is a flat CSV containing the overall result plus score, evidence, and explanation columns for every criterion.
 
-The demo runs entirely in the browser. Text entered into the interface is not sent to a server.
+## Intended use
 
-## Use case
+RubricFlow supports accelerators, incubators, grant programs, and similar workflows that need an auditable first review. It is not a substitute for human judgment, and it should not make autonomous high-impact decisions.
 
-RubricFlow is designed as a proof of concept for accelerators, grant programs, recruiting teams, and admissions workflows that need fast and auditable first-pass reviews.
+## Fixed-scope pilot
 
-## Request a pilot
+**US$95** includes:
 
-A fixed-scope pilot starts at **US$95** and includes rubric configuration, a test batch, and one calibration round.
+- adaptation of one existing rubric;
+- processing of up to 50 applications;
+- a spreadsheet-ready, auditable CSV;
+- one calibration round using reviewer feedback;
+- no subscription or mandatory integration.
 
 [Request a RubricFlow pilot](https://github.com/oscarricharingaoblitas-sketch/rubricflow-demo/issues/new?template=pilot-request.yml)
 
