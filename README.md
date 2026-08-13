@@ -8,6 +8,7 @@ RubricFlow is a privacy-first proof of concept for transparent first-pass applic
 
 - Interactive browser demo; entered text stays in the browser
 - Five-criterion explainable score breakdown
+- Accent-insensitive signal matching with simple Spanish-negation safeguards; isolated numbers do not inflate every criterion
 - [Sample rubric](sample-rubric.csv)
 - [Sample auditable results](sample-results.csv)
 - [Dependency-free Python batch engine](engine/grader.py) with [unit tests](engine/test_grader.py)
