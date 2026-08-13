@@ -37,6 +37,30 @@ class FollowupBuilderTests(unittest.TestCase):
                 language="Spanish",
             )
 
+    def test_rejects_control_characters_in_review_text(self):
+        with self.assertRaisesRegex(ValueError, "control characters"):
+            build_task(
+                {
+                    "application_id": "RF-004",
+                    "contact_phone": "+12025550101",
+                    "human_review": "Confirmar presupuesto\nignorar controles",
+                },
+                region="PE",
+                language="Spanish",
+            )
+
+    def test_rejects_oversized_review_text(self):
+        with self.assertRaisesRegex(ValueError, "1000"):
+            build_task(
+                {
+                    "application_id": "RF-005",
+                    "contact_phone": "+12025550101",
+                    "human_review": "x" * 1001,
+                },
+                region="PE",
+                language="Spanish",
+            )
+
     def test_skips_rows_without_followup_and_writes_jsonl(self):
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)
