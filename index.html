@@ -42,18 +42,25 @@
     .mini { border-top:1px solid var(--ink); padding-top:12px; }
     .mini strong { display:block; margin-bottom:4px; }
     .mini span { color:var(--muted); font-size:.9rem; }
+    .offer { margin-top:34px; padding:28px; border:1px solid var(--line); border-radius:24px; background:rgba(255,253,247,.72); }
+    .offer h2 { font-size:1.7rem; letter-spacing:-.035em; margin-bottom:6px; }
+    .offer > p { color:var(--muted); margin:0 0 20px; }
+    .offer-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
+    .offer-item { padding:16px; border-radius:16px; background:white; border:1px solid var(--line); }
+    .offer-item strong { display:block; color:var(--green); font-size:1.25rem; margin-bottom:4px; }
+    .offer-item span { color:var(--muted); font-size:.86rem; }
     .cta { display:flex; justify-content:space-between; align-items:center; gap:24px; margin-top:34px; padding:26px; border-radius:22px; background:var(--ink); color:white; }
     .cta h2 { margin:0 0 5px; }
     .cta p { margin:0; color:#d9e3de; }
     .cta a { flex:none; display:inline-block; padding:12px 18px; border-radius:999px; background:var(--lime); color:var(--ink); font-weight:850; text-decoration:none; }
     .cta a:hover { transform:translateY(-1px); }
     .notice { color:var(--muted); font-size:.78rem; margin-top:22px; }
-    @media (max-width:780px) { nav{margin-bottom:40px}.hero,.workspace{grid-template-columns:1fr}.hero{gap:28px}.footer-grid{grid-template-columns:1fr}.cta{align-items:flex-start;flex-direction:column}h1{font-size:clamp(3.2rem,17vw,5rem)} }
+    @media (max-width:780px) { nav{margin-bottom:40px}.hero,.workspace{grid-template-columns:1fr}.hero{gap:28px}.footer-grid,.offer-grid{grid-template-columns:1fr}.cta{align-items:flex-start;flex-direction:column}h1{font-size:clamp(3.2rem,17vw,5rem)} }
   </style>
 </head>
 <body>
 <main>
-  <nav><div class="brand">RubricFlow</div><div class="pill">DEMO LOCAL · SIN API</div></nav>
+  <nav><div class="brand">RubricFlow</div><div class="pill">DEMO INTERACTIVA · DATOS LOCALES</div></nav>
   <section class="hero">
     <div>
       <h1>Evalúa mejor.<br><span class="accent">Explica cada punto.</span></h1>
@@ -83,9 +90,19 @@
     <div class="mini"><strong>Listo para lotes</strong><span>La versión entregable procesa CSV y exporta resultados estructurados.</span></div>
     <div class="mini"><strong>Piloto desde US$95</strong><span>Incluye adaptación de una rúbrica, pruebas y una calibración.</span></div>
   </section>
+  <section class="offer" aria-label="Alcance del piloto">
+    <h2>Un piloto pequeño, con entrega concreta</h2>
+    <p>Probamos el flujo con una convocatoria real antes de hablar de una implementación mayor.</p>
+    <div class="offer-grid">
+      <div class="offer-item"><strong>1 rúbrica</strong><span>Adaptada a los criterios actuales de tu programa.</span></div>
+      <div class="offer-item"><strong>Hasta 50</strong><span>Postulaciones procesadas en el lote inicial.</span></div>
+      <div class="offer-item"><strong>CSV auditable</strong><span>Puntuaciones y evidencia textual por criterio.</span></div>
+      <div class="offer-item"><strong>1 calibración</strong><span>Ajuste con ejemplos revisados por tu equipo.</span></div>
+    </div>
+  </section>
   <section class="cta" aria-label="Solicitar un piloto">
-    <div><h2>¿Quieres evaluarlo con tu propia rúbrica?</h2><p>Piloto de alcance fijo desde US$95: configuración, lote de prueba y calibración.</p></div>
-    <a href="https://github.com/oscarricharingaoblitas-sketch/rubricflow-demo/issues/new?template=pilot-request.yml">Solicitar piloto</a>
+    <div><h2>¿Quieres probarlo con tu propia rúbrica?</h2><p>Piloto de alcance fijo por US$95. Sin suscripción ni integración obligatoria.</p></div>
+    <a href="https://github.com/oscarricharingaoblitas-sketch/rubricflow-demo/issues/new?template=pilot-request.yml">Solicitar piloto de US$95</a>
   </section>
   <p class="notice">Herramienta de apoyo, no sustituto de revisión humana. Las decisiones de financiación, empleo, educación, salud u otras decisiones de alto impacto requieren supervisión y validación.</p>
 </main>
