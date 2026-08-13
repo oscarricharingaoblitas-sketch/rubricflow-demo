@@ -37,7 +37,15 @@ Required input columns:
 
 ## 2. Inspect and plan with CALL-E
 
-Use the [official CALL-E Python batch runner](https://github.com/CALLE-AI/call-e-integrations/tree/main/examples/python-batch-runner). Its default `--dry-run` mode invokes `plan_call` only and does not start a phone call:
+After installing and authenticating the official `calle` CLI, the included planner invokes CALL-E's real `plan_call` tool for every prepared row. It never invokes `run_call`:
+
+```bash
+python plan_followups.py followups.jsonl
+```
+
+This is a networked CALL-E operation and requires an authenticated CALL-E account, but it does not place a phone call. The returned plan may contain execution credentials; treat terminal output as private.
+
+For richer batch output and optional end-to-end execution, use the [official CALL-E Python batch runner](https://github.com/CALLE-AI/call-e-integrations/tree/main/examples/python-batch-runner). Its default `--dry-run` mode invokes `plan_call` only and does not start a phone call:
 
 ```bash
 uv run python client.py --input /path/to/followups.jsonl --dry-run
@@ -61,4 +69,4 @@ CALL-E then performs `plan_call → run_call → get_call_run` and stores the pl
 python -m unittest -v
 ```
 
-The tests cover safe payload generation, E.164 validation, input bounds, control-character rejection, empty-review filtering, JSONL output, and required-column validation. No network access, CALL-E account, or paid API is needed.
+The tests cover safe payload generation, E.164 validation, input bounds, control-character rejection, empty-review filtering, JSONL output, required-column validation, and verification that the planner invokes `plan_call` without `run_call`. Tests use a local fake runner; no network access, CALL-E account, or paid API is needed.
