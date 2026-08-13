@@ -49,6 +49,9 @@
     .offer-item { padding:16px; border-radius:16px; background:white; border:1px solid var(--line); }
     .offer-item strong { display:block; color:var(--green); font-size:1.25rem; margin-bottom:4px; }
     .offer-item span { color:var(--muted); font-size:.86rem; }
+    .downloads { display:flex; flex-wrap:wrap; align-items:center; gap:12px; margin-top:18px; }
+    .downloads span { color:var(--muted); font-size:.88rem; }
+    .downloads a { color:var(--green); font-weight:800; text-underline-offset:3px; }
     .cta { display:flex; justify-content:space-between; align-items:center; gap:24px; margin-top:34px; padding:26px; border-radius:22px; background:var(--ink); color:white; }
     .cta h2 { margin:0 0 5px; }
     .cta p { margin:0; color:#d9e3de; }
@@ -98,6 +101,11 @@
       <div class="offer-item"><strong>Hasta 50</strong><span>Postulaciones procesadas en el lote inicial.</span></div>
       <div class="offer-item"><strong>CSV auditable</strong><span>Puntuaciones y evidencia textual por criterio.</span></div>
       <div class="offer-item"><strong>1 calibración</strong><span>Ajuste con ejemplos revisados por tu equipo.</span></div>
+    </div>
+    <div class="downloads">
+      <span>Revisa el formato antes de solicitar:</span>
+      <a href="sample-rubric.csv" download>Descargar rúbrica de ejemplo</a>
+      <a href="sample-results.csv" download>Descargar resultados de ejemplo</a>
     </div>
   </section>
   <section class="cta" aria-label="Solicitar un piloto">
