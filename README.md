@@ -40,7 +40,7 @@ RubricFlow supports accelerators, incubators, grant programs, and similar workfl
 - one calibration round using reviewer feedback;
 - no subscription or mandatory integration.
 
-[Request a RubricFlow pilot](https://github.com/oscarricharingaoblitas-sketch/rubricflow-demo/issues/new?template=pilot-request.yml)
+[Review the pilot scope](pilot.html) or [request a RubricFlow pilot](https://github.com/oscarricharingaoblitas-sketch/rubricflow-demo/issues/new?template=pilot-request.yml)
 
 ## License
 
