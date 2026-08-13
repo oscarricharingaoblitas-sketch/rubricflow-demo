@@ -1,5 +1,7 @@
 # RubricFlow
 
+[Open the live demo](https://oscarricharingaoblitas-sketch.github.io/rubricflow-demo/)
+
 RubricFlow is an interactive, privacy-first demo for evaluating applications with configurable rubrics and transparent scoring.
 
 ## What it demonstrates
