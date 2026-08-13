@@ -12,6 +12,7 @@ RubricFlow is a privacy-first proof of concept for transparent first-pass applic
 - [Sample rubric](sample-rubric.csv)
 - [Sample auditable results](sample-results.csv)
 - [Dependency-free Python batch engine](engine/grader.py) with [unit tests](engine/test_grader.py)
+- [Unofficial ATIPAQ 2026 sample](atipaq-2026/README.md) with published weights, threshold checks, synthetic applications, results, and tests
 
 ## Run the batch engine
 
