@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RubricFlow - muestra UNAT 2026</title>
+  <meta name="description" content="Muestra no oficial y auditable para la evaluación de proyectos de tesis UNAT 2026.">
+  <style>
+    :root{--ink:#10231d;--muted:#52635d;--paper:#f4f1e8;--card:#fffdf7;--green:#1d604b;--lime:#c9ed7a;--line:#d6d7cd}*{box-sizing:border-box}body{margin:0;color:var(--ink);background:radial-gradient(circle at 90% 0,#ddf4b3 0,transparent 24rem),var(--paper);font:16px/1.55 Inter,system-ui,sans-serif}main{width:min(980px,calc(100% - 32px));margin:auto;padding:34px 0 70px}a{color:var(--green);font-weight:750}nav{display:flex;justify-content:space-between;gap:16px;align-items:center;margin-bottom:54px}.brand{font-weight:900;font-size:1.3rem}.tag{border:1px solid var(--ink);border-radius:99px;padding:7px 12px;font-size:.78rem;font-weight:800}h1{font-size:clamp(2.8rem,7vw,5.5rem);line-height:.93;letter-spacing:-.065em;margin:0;max-width:850px}.accent{color:var(--green)}.lede{font-size:1.15rem;color:var(--muted);max-width:760px;margin:24px 0 36px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:20px}.card strong{display:block;font-size:1.55rem;color:var(--green)}h2{margin:38px 0 12px;font-size:1.45rem}.criteria{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.criterion{background:white;border:1px solid var(--line);border-radius:14px;padding:14px}.criterion b{display:block}.criterion span{color:var(--muted);font-size:.88rem}.downloads{display:flex;flex-wrap:wrap;gap:11px;margin-top:14px}.downloads a,.cta{display:inline-block;border-radius:999px;padding:10px 15px;text-decoration:none;background:white;border:1px solid var(--line)}.cta{background:var(--green);color:white;border-color:var(--green)}.notice{font-size:.84rem;color:var(--muted);margin-top:30px}@media(max-width:720px){.grid,.criteria{grid-template-columns:1fr}nav{align-items:flex-start;flex-direction:column}}
+  </style>
+</head>
+<body><main>
+  <nav><div class="brand">RubricFlow</div><div class="tag">MUESTRA NO OFICIAL · DATOS FICTICIOS</div></nav>
+  <h1>Prelectura auditable para <span class="accent">30 proyectos UNAT.</span></h1>
+  <p class="lede">Ejemplo independiente basado en la ficha de evaluación publicada para el Concurso de Subvenciones de Tesis 2026. Organiza evidencia y vacíos; los pares externos conservan la calificación y decisión final.</p>
+  <section class="grid">
+    <div class="card"><strong>100 puntos</strong>Seis criterios con máximos exactos.</div>
+    <div class="card"><strong>4 bandas</strong>Excelente, Bueno, Regular y Deficiente.</div>
+    <div class="card"><strong>5 pruebas</strong>Incluyen negaciones y límites publicados.</div>
+  </section>
+  <h2>Criterios publicados</h2>
+  <section class="criteria">
+    <div class="criterion"><b>Pertinencia</b><span>20 puntos</span></div><div class="criterion"><b>Calidad científica</b><span>25 puntos</span></div><div class="criterion"><b>Plan y presupuesto</b><span>20 puntos</span></div><div class="criterion"><b>Idoneidad del asesor</b><span>15 puntos</span></div><div class="criterion"><b>Impacto</b><span>15 puntos</span></div><div class="criterion"><b>Integridad</b><span>5 puntos</span></div>
+  </section>
+  <h2>Archivos auditables</h2>
+  <div class="downloads"><a href="results.csv">Resultados ficticios</a><a href="unat_2026_rubric.csv">Rúbrica CSV</a><a href="synthetic_proposals.csv">Propuestas ficticias</a><a href="grader.py">Motor Python</a><a href="test_grader.py">Pruebas</a><a href="README.md">Documentación</a></div>
+  <h2>Piloto de alcance fijo</h2>
+  <p>US$95: adaptación de una rúbrica, hasta 50 expedientes desidentificados, CSV auditable y una calibración.</p>
+  <a class="cta" href="https://github.com/oscarricharingaoblitas-sketch/rubricflow-demo/issues/new?template=pilot-request.yml">Solicitar piloto</a>
+  <p class="notice">Fuente: Bases oficiales UNAT 2026, páginas 11-12. RubricFlow no está afiliado ni aprobado por la UNAT. Esta muestra no usa expedientes reales.</p>
+</main></body></html>
