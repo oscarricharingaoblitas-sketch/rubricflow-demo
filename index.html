@@ -128,8 +128,7 @@
   const sample = "El problema afecta actualmente a 12,000 estudiantes rurales porque las demoras limitan su acceso. Nuestra solución única utiliza un flujo sin conexión, diferente de las herramientas existentes. Lanzamos un MVP y probamos un piloto con 240 usuarios. Los beneficiarios objetivo son escuelas rurales; conseguimos financiación y conversamos con dos inversores. Una alianza universitaria reconoció el impacto y el siguiente hito es un despliegue escalable.";
   const esc = value => value.replace(/[&<>\"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;',"'":'&#39;'}[ch]));
   const normalizeText = value => value.toLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu, '');
-  const escapeRegex = value => value.replace(/[.*+?^${}()|[\]\\]/g, '\\  function evaluate() {
-    const text = document.querySelector('#application').value.trim().toLowerCase();');
+  const escapeRegex = value => value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   function hasAffirmedSignal(text, signal) {
     const term = normalizeText(signal);
     const matcher = new RegExp(`(^|[^\\p{L}\\p{N}])${escapeRegex(term)}(?=$|[^\\p{L}\\p{N}])`, 'gu');
