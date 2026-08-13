@@ -14,12 +14,15 @@ A zero-cost Python prototype for scoring written applications against five crite
 
 ```powershell
 python grader.py sample_applications.csv -o results.csv
+python grader.py sample_applications.csv --rubric sample_rubric.csv -o custom-results.csv
 python -m unittest -v
 ```
 
 Input requires an `application` column; `id` is optional.
 
-The output contains the overall result plus three columns per criterion: score, matched evidence, and explanation. A final `human_review` column makes the required reviewer action explicit.
+The optional rubric CSV requires `key`, `label`, `weight`, and `signals` columns. Separate signals with `|`. Weights may be decimals, whole numbers, or percentages and are normalized automatically.
+
+The output contains the overall result plus three columns per configured criterion: score, matched evidence, and explanation. A final `human_review` column makes the required reviewer action explicit.
 
 ## Production path
 
