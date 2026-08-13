@@ -1,0 +1,7 @@
+key,label,weight,signals
+problem,Relevancia y definición del problema,20%,problema|población|evidencia|afecta
+method,Rigor metodológico,25%,diseño|muestra|instrumento|análisis
+feasibility,Viabilidad,20%,cronograma|recursos|permisos|riesgos
+impact,Impacto académico o social,15%,resultados|beneficiarios|indicadores|impacto
+budget,Presupuesto,10%,presupuesto|partidas|costos|actividades
+team,Capacidad del equipo,10%,equipo|roles|experiencia|dedicación
